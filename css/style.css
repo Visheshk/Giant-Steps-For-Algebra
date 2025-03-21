@@ -1,0 +1,116 @@
+body {
+    font-family: 'Georgia', "Myriad Pro", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    padding: 2em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+button.g-button, a.g-button, input[type=submit].g-button {
+	-webkit-border-radius: 2px 2px;
+	border: solid 1px rgb(153, 153, 153);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(221, 221, 221)));
+	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+	text-align: center;
+	text-shadow: 0px 1px 1px rgba(255,255,255,1);
+	line-height: 1;
+}
+
+.divider{
+    width:15px;
+    height:auto;
+    display:inline-block;
+}
+
+.vertical{
+    width: 100%;
+    height:20px;
+    display:inline-block;
+}
+
+input.box{
+  padding: 4px;
+  -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  box-shadow: inset 2px 2px 2px 0px #dddddd;
+}
+
+.g-button.large {
+	padding: 12px 20px; 
+	font-size: 21px; 
+	font-weight: bold;
+}
+
+canvas { 
+	border: 10px solid black; 
+}
+
+.all-menus{
+	pointer-events: all;	
+}
+
+.my-menus{
+	background: rgba(255,255,255,0.9);
+	padding: 7px;
+	-moz-border-radius:0px 0px 11px 9px;
+	-webkit-border-radius:0px 0px 11px 9px;
+    pointer-events: all;
+}
+
+.story-top{
+	visibility: visible;
+	background: rgba(250,250,250,0.8);
+	padding: 10px;
+	-moz-border-radius:0px 0px 11px 9px;
+	-webkit-border-radius:0px 0px 11px 9px;
+    pointer-events: all;
+    border: 4px dotted #895c00;
+}
+
+.header-fixed {
+	position: fixed; 
+	top: 0px; 
+}
+
+#footer-fixed {
+	position: fixed; 
+	bottom: 0px; 
+	z-index: 100000;
+    pointer-events: none;
+}
+
+#footer-toggle {
+	visibility: visible;
+}
+
+#footer-menu {
+	visibility: hidden;
+}
+
+
+#overlay {
+     visibility: hidden;
+     position: fixed;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     background: rgba(1,1,1,0.5);
+     text-align:center;
+}
+
+#over-contents {
+	position: fixed;
+     width:300px;
+     margin: 350px auto 0px;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center;
+}
+
+.lead{
+    font-size: 17px !important;
+    line-height: 25px !important;
+}
