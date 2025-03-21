@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	Boss fight! - Giant Steps for Algebra - Freeform
+	</title>
+
+<!-- Load the Paper.js library -->
+<script type="text/javascript" src="../js/paper.js"></script>
+<!-- Define inlined PaperScript associate it with myCanvas -->
+<script src="../js/jquery-1.9.1.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('body').css('display', 'none');
+	$('body').fadeIn(600);
+	
+	$('.link').click(function(event) {
+		event.preventDefault();
+		newLocation = this.href;
+		$('body').fadeOut(600, newpage);
+	});
+  
+	function newpage() {
+		window.location = newLocation;
+	}
+});
+
+function overlay() {
+	el = document.getElementById("overlay");
+	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+
+
+function teachDash(th) {
+	t = document.getElementById("footer-toggle");
+	t2 = document.getElementById("footer-menu");
+	//t.style.visibility = (t.style.visibility == "hidden") ? "visible": "hidden";
+	t2.style.visibility = (t2.style.visibility == "visible") ? "hidden": "visible";
+}
+
+window.globals = {};
+
+var an = 0;
+var msg =["<p>Oh no! The treasure wasn't found there. Try again, please?</p>", "<p>Thank you! We found our treasure again.</p>", "<p>Questions Up!</p>"];
+var storeVis = 1;
+
+</script>
+
+<script type="text/paperscript" src="js/scripts.js" canvas = "myCanvas"> </script>
+
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+
+
+<img src = "../images/flag-small.png" id = 'flag' hidden/>
+<img src = "../images/treasurebox.png" id = 'tbox'  hidden />
+<img src = "../images/bg.jpg" id = 'bg' width = "1100" hidden />
+
+</head>
+<body>
+	<div id = "upperBar"></div>
+	<div class = "row">
+		<div class = "header-fixed story-top span12 lead" id = "topStory">
+			<div id="upper-part">
+			<h2>Question 3.</h2> 
+			
+			<div class="tabbable tabs-below">
+            	<div class="tab-content">
+            		<div class="tab-pane active" id="A">
+            			<p>A giant has a treasure she wants to bury. <br />The giant take one giant step forward, and then eight meters further ahead. She then buries her treasure.</p>
+            		</div>
+            		<div class="tab-pane" id="B">
+            			<p> The giant has more treasure that she wants to add to the treasure from yesterday. So, she takes two giant steps forward, and then six meters further ahead. She then finds the right spot and buries the treasure again.</p>
+            		</div>
+            	</div>
+            	<ul class="nav nav-tabs">
+                	<li class="active"><a href="#A" data-toggle="tab">Day 1</a></li>
+                	<li class=""><a href="#B" data-toggle="tab">Day 2</a></li>
+                </ul>
+                Using the tools sketch out the story in the drawing space beneath. Use this to find how many meters away the treasure is buried from the starting point.
+            </div>
+            </div>
+            	
+
+            <div id = "answer-form"> 
+		        <form name = "answer" action="javascript:void(0);" style = "margin-bottom: 0px;">
+				<input type="text" class = "" id = "ans" placeholder = "Distance in meters"  style = "margin-top: 9px; text-align: right;"/>
+				<a href = "#myModal" data-toggle = "modal"><input type="submit" class = "btn" onclick="javascript:
+				if(document.getElementById('ans').value!= 10) {
+					document.getElementById('response').innerHTML = msg[0];
+					document.getElementById('progress-button').style.visibility = 'hidden';
+					an = 0;
+				}
+				else {
+					document.getElementById('response').innerHTML = msg[1];
+					document.getElementById('progress-button').style.visibility = 'visible';
+					an = 1;
+				}" value="Check" /></a> 
+					
+					<!--<a href="#myModal" role="button" class="btn" data-toggle="modal">Check</a>-->
+					
+					<button type = "button" class="close" onclick="javascript: 
+					if (storeVis == 1){
+						document.getElementById('topStory').style.top = (-1) * ($(document.getElementById('answer-form')).position().top + 3) + 'px';
+						storeVis = 0;
+					}
+					else{
+						storeVis = 1;
+						document.getElementById('topStory').style.top = 0;
+					}" style="float:right;"><h6>Hide/Show Story</h6></button>
+		        </form>
+		    </div>
+		    </div>
+		</div>
+
+
+	<div id="footer-fixed" class = "row	" width = "1200">
+		
+		<div class = "span6">
+		
+		</div>
+
+		<div id = "footer-menu" class = "span6 my-menus">
+		<div class = "btn-toolbar">
+			<div class="btn-group">
+				<button type="button" class="btn" onclick="window.location.href = '2.html'"><i class="icon-arrow-left"></i> Qn</button></a>
+				<button type="button" class="btn" onclick="window.location.href = '../meter'"><i class="icon-arrow-right"> </i> Qn</button></a>
+    		</div>
+
+			<div class="btn-group" data-toggle="buttons-radio">
+			  <button type="button" class="btn" onclick="window.location.href='../v2'">Initial</button>
+			  <button type="button" class="btn" onclick="window.location.href='../meter'">Fixed Meter</button>
+			  <button type="button" class="btn" onclick="window.location.href='../new'">Auto</button>
+			</div>
+    	</div>			
+		</div>
+
+
+		
+		<div id = "footer-toggle" class = "my-menus span2.2">
+			<div class="btn-group">
+			<a onclick = "teachDash()"><button type="button" class="btn btn-primary" id = "fToggler1" data-toggle="button">Teacher's Dashboard</button></a>
+			</div>
+		</div>
+	</div>
+
+<!--	<img src = "../images/island-landing.png" /> -->
+
+	</div>
+
+
+<div name = "draw">
+	
+
+	<br />
+    <canvas id="myCanvas" height = "700" width = "1045"></canvas> 
+</div>
+
+<div class = "vertical" />
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="myModalLabel">The Leprechauns say...</h3>
+  </div>
+  <div class="modal-body" id = "response">
+    <p>Oh no! The treasure wasn't found there. Try again, please?</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Go back</button>
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="window.location.href='../meter/1.html'" id="progress-button">Onwards, to the next treasure!</button>
+  </div>
+</div>
+
+<div class = "vertical" />
+
+
+
+<script type="text/javascript" src="../js/smoothscroll.js"></script>
+
+</body>
+</html>
